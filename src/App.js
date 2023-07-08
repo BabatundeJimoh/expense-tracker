@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import CustomerForm from "./component/CustomerForm";
+import CustomerList from "./component/CustomerList";
+import { Container, Col, Row } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container>
+        <Row>
+          <Col
+            md="6"
+            style={{
+              width: "380px",
+              height: "420px",
+              background: "#36f76a",
+              borderRadius: "10px",
+            }}
+          >
+            <CustomerForm />
+          </Col>
+
+          <Col md="6">
+            <CustomerList />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
